@@ -41,12 +41,12 @@ class BTC(ETP):
             # Key Fund Information
             key_fund_information = t.find_all(class_="Tables_Tables__container_table__Tw2_H")[-1]
 
-            if self.date < date.fromisoformat("2024-08-14"):
+            if self.date < date.fromisoformat("2024-08-11"):
                 ref_date = key_fund_information.find(class_="Text_Text__xt7Jy Text_Text_body-small__79DVN").text.split(" ")[-1]
             else:
                 ref_date = key_fund_information.find(class_="DownloadWithDate_Root__xBAtE DownloadWithDate_Root_white__Zr0dU").text.split(" ")[-1]
 
-            ref_date_key_fund_information = datetime.strptime(ref_date, "%d.%m.%Y").date().isoformat()
+            ref_date_key_fund_information = datetime.strptime(ref_date, "%m/%d/%Y").date().isoformat()
 
             aum = float(key_fund_information.find_all(class_="TableItem_TableItem__b9eHf")[0].text.split("$")[-1].replace(",", ""))
             n_shares = int(key_fund_information.find_all(class_="TableItem_TableItem__b9eHf")[2].text.split("g")[-1].replace(",", ""))
