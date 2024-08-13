@@ -42,7 +42,7 @@ class BTC(ETP):
             key_fund_information = t.find_all(class_="Tables_Tables__container_table__Tw2_H")[-1]
 
             if self.date < date.fromisoformat("2024-08-11"):
-                ref_date = key_fund_information.find(class_="Text_Text__xt7Jy Text_Text_body-small__79DVN").text.split(" ")[-1]
+                ref_date = key_fund_information.find(class_="Text_Text__xt7Jy Text_Text_body-small__79DVN Text_Text_animation-fadeIn__XEPa6").text.split(" ")[-1]
             else:
                 ref_date = key_fund_information.find(class_="DownloadWithDate_Root__xBAtE DownloadWithDate_Root_white__Zr0dU").text.split(" ")[-1]
 
