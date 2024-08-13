@@ -58,3 +58,6 @@ c.execute("INSERT into btc_daily_performance VALUES ('','2024-07-31',0,0)")
 
 LOGGER.info("Created table BTC_KEY_FUND_INFORMATION")
 LOGGER.info("Created table BTC_DAILY_PERFORMANCE")
+
+conn.commit()
+conn.close()
