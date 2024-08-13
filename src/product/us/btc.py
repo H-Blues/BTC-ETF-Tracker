@@ -89,4 +89,3 @@ class BTC(ETP):
         keys = "ref_date"
 
         self._dump(daily_performance, table, keys, con)
-
